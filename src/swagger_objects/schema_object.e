@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,7 +22,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	ref: STRING
 			-- the reference string
@@ -129,6 +129,9 @@ feature
 
 	required_is_set: BOOLEAN
 			-- flag, indicating if required is set or not
+
+
+feature -- Change Element
 
 	set_ref (a_ref: STRING)
 			-- sets the ref
@@ -301,8 +304,7 @@ feature
 			example := a_example
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,13 +22,16 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	name: STRING
 
 	description: STRING
 
 	external_docs: EXTERNAL_DOCUMENTATION_OBJECT
+
+
+feature -- Change Element
 
 	set_name (a_name: STRING)
 			-- sets the name
@@ -48,8 +51,7 @@ feature
 			external_docs := a_external_doc
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {INDEXING_NOTES_VISITOR}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -61,8 +60,7 @@ feature {INDEXING_NOTES_VISITOR}
 	known_xmls: HASH_TABLE [XML_OBJECT, STRING]
 	-- found xml declarations, used for later reference
 
-feature {INDEXING_NOTES_VISITOR}
-	-- extraction features. Helping to create Swagger object from annotations
+feature {INDEXING_NOTES_VISITOR} -- Extraction features. Helping to create Swagger object from annotations
 
 	extract_list (l_as: INDEX_AS; list: LINKED_LIST [STRING])
 		do

@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes new instance
@@ -22,7 +22,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 	--ref: STRING
 	-- ALLOWS
 
@@ -54,6 +54,9 @@ feature
 			-- list of parameters that are applicable for all the operations described under this path
 
 	references: LINKED_LIST [REFERENCE_OBJECT]
+
+
+feature -- Change Element
 
 	set_get (a_get: OPERATION_OBJECT)
 			-- sets the get
@@ -106,8 +109,7 @@ feature
 			parameters.extend (a_parameter)
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

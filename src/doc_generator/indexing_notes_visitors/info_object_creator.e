@@ -11,8 +11,7 @@ inherit
 
 	INDEXING_NOTES_VISITOR
 
-feature {NONE}
-	-- extraction features
+feature {NONE} -- Extraction features
 
 	extract_info (l_as: INDEX_AS): INFO_OBJECT
 			-- extracts the info object
@@ -94,13 +93,12 @@ feature {NONE}
 			result.set_url (url)
 		end
 
-feature
+feature -- Access
 
 	info: INFO_OBJECT
 			-- the extracted info object
 
-feature {AST_EIFFEL}
-	--visitor implementation
+feature {AST_EIFFEL} -- Visitor implementation
 
 	process_class_as (l_as: CLASS_AS)
 		do

@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- create the object with all required parameters
@@ -22,7 +22,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	swagger: STRING
 			--specifies Swagger specification, must be 2.0
@@ -68,6 +68,9 @@ feature
 
 	external_docs: detachable EXTERNAL_DOCUMENTATION_OBJECT
 			-- additional external documentation
+
+
+feature -- Change Element
 
 	set_swagger (a_swagger: STRING)
 		do
@@ -181,8 +184,7 @@ feature
 			external_docs := a_external_doc
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

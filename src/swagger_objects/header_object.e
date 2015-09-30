@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {HEADER_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,7 +21,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	description: STRING
 			-- a short description of the header
@@ -98,6 +97,8 @@ feature
 
 	multiple_of_is_set: BOOLEAN
 			-- flag, indicating if multiple_of was set or not
+
+feature -- Change Element
 
 	set_description (a_description: STRING)
 			-- sets the description
@@ -204,8 +205,7 @@ feature
 			multiple_of_is_set := true
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

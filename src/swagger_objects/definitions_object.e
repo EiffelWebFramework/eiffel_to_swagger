@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {DEFINITIONS_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			--initializes a new instance
@@ -23,10 +22,12 @@ feature
 			create definitions.make (10)
 		end
 
-feature
+feature -- Access
 
 	definitions: HASH_TABLE [SCHEMA_OBJECT, STRING]
 			-- definitions mapping a name to the schema it defines
+
+feature -- Change Element
 
 	set_definitions (some_definition: HASH_TABLE [SCHEMA_OBJECT, STRING])
 			-- adds a definition
@@ -34,8 +35,7 @@ feature
 			definitions := some_definition
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

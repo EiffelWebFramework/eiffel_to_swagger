@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {OPERATION_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initialize new instance
@@ -22,7 +21,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	operation: STRING
 			-- type of operation
@@ -64,6 +63,8 @@ feature
 
 	security_requirements: LINKED_LIST [SECURITY_REQUIREMENT_OBJECT]
 			-- declaration of which security shcemes are applied for this operation.
+
+feature -- Change Element
 
 	set_operation (a_operation: STRING)
 			-- sets the operation
@@ -193,8 +194,7 @@ feature
 			references := some_references
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

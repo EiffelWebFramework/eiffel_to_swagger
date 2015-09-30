@@ -1,6 +1,5 @@
 note
 	description: "object representing a JSON boolean value"
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,18 +13,18 @@ inherit
 create
 	make
 
-feature
-	-- access
+feature	{NONE} -- Initialization
 
 	make (a_value: BOOLEAN)
 		do
 			value := a_value
 		end
 
+feature -- Access
+
 	value: BOOLEAN
 
-feature {JSON_VISITOR}
-	--visit
+feature {JSON_VISITOR} -- Visitor
 
 	process (v: JSON_VISITOR)
 		do

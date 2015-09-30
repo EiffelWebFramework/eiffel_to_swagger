@@ -13,7 +13,7 @@
 		<setting name="console_application" value="true"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
 		<library name="parser" location="$EIFFEL_SRC\framework\parser\parser.ecf"/>
-		<library name="swagger_documentation_generation" location="..\..\src\swagger_documentation_generation.ecf"/>
+		<library name="swagger_documentation_generation" location="..\..\src\swagger_documentation_generation.ecf" readonly="false"/>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
 		<tests name="unit_test" location=".\" recursive="true">
 		</tests>

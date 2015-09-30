@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,10 +22,12 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	responses: HASH_TABLE [RESPONSE_OBJECT, STRING]
 			-- response defionitions, mapping a name to the parameter it defines
+
+feature -- Change Element
 
 	set_responses (some_responses: HASH_TABLE [RESPONSE_OBJECT, STRING])
 			-- adds a response
@@ -33,8 +35,7 @@ feature
 			responses := some_responses
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

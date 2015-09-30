@@ -1,6 +1,5 @@
 note
 	description: "Generates a JSON object from a swagger object."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -11,8 +10,7 @@ inherit
 
 	SWAGGER_VISITOR
 
-feature {NONE}
-	-- helper features
+feature {NONE} -- Helper features
 
 	intermediate_result: JSON_VALUE_OBJECT
 		-- result created by the different visits
@@ -67,8 +65,7 @@ feature {NONE}
 			end
 		end
 
-feature
-	-- access
+feature	-- Access
 
 	swagger_json_object: JSON_OBJECT
 		-- the created JSON object
@@ -81,8 +78,7 @@ feature
 			w_o.process (current)
 		end
 
-feature {SWAGGER_API_OBJECT}
-	--visitor implementation
+feature {SWAGGER_API_OBJECT} --Visitor implementation
 
 	process_contact_object (w_o: CONTACT_OBJECT)
 			-- process an object of type CONTACT_OBJECT

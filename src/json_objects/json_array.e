@@ -14,20 +14,18 @@ inherit
 create
 	make
 
-feature
-	--initialize
+feature	{NONE} -- Initialization
 
 	make
 		do
 			create value.make
 		end
 
-feature
+feature -- Access
 
 	value: LINKED_LIST [G]
 
-feature {JSON_VISITOR}
-	-- visit
+feature {JSON_VISITOR} -- Visitor
 
 	process (v: JSON_VISITOR)
 		do

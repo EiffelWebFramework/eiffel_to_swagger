@@ -7,8 +7,7 @@ note
 deferred class
 	ANNOTATION_VALIDATOR
 
-feature {NONE}
-	-- helper features
+feature {NONE} -- Helper features
 
 	there_exists (list: LIST [STRING]; test: PREDICATE [ANY, TUPLE [STRING]]): BOOLEAN
 			-- own implementation of 'there_exists' of class LINEAR

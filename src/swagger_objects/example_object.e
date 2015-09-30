@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {EXAMPLE_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,10 +21,12 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	example: ANY
 			-- an example object
+
+feature -- Change element
 
 	set_example (a_example: ANY)
 			-- sets an example
@@ -33,8 +34,7 @@ feature
 			example := a_example
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

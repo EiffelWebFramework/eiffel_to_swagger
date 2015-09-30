@@ -21,7 +21,7 @@ feature {NONE} -- intern
 	current_feature: FEATURE_AS
 			-- feature currently being visited
 
-feature {NONE}
+feature {NONE} -- Implementation
 
 	set_error_msg (l_as: INDEX_AS)
 			-- sets the error message, when wrong usage of the annotations were detected
@@ -62,8 +62,7 @@ feature -- validation
 			end
 		end
 
-feature
-	--visitor implementation
+feature	-- Visitor implementation
 
 	process_class_as (l_as: CLASS_AS)
 		do

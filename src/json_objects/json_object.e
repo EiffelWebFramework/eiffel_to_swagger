@@ -1,6 +1,5 @@
 note
 	description: "Object representing a JSON object"
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,18 +13,19 @@ inherit
 create
 	make
 
-feature
-	-- initialize
+feature {NONE}	-- Initialization
 
 	make
 		do
 			create values.make (10)
 		end
 
-feature
+feature -- Access
 
 	values: HASH_TABLE [JSON_VALUE_OBJECT, STRING]
 			-- HASH_TABLE storing field/value pairs
+
+feature -- Change Element
 
 	add_value (key: STRING; value: detachable JSON_VALUE_OBJECT)
 			-- adds a json object to the values
@@ -67,8 +67,7 @@ feature
 			end
 		end
 
-feature {JSON_VISITOR}
-	-- visit
+feature {JSON_VISITOR}	-- Visitor
 
 	process (v: JSON_VISITOR)
 		do

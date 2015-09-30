@@ -14,13 +14,15 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make (a_value: STRING)
 			-- creates a new instance
 		do
 			value := a_value
 		end
+
+feature -- Access
 
 	value: STRING
 

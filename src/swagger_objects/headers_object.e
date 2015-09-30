@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {HEADERS_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,10 +21,12 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	headers: HASH_TABLE [HEADER_OBJECT, STRING]
 			--the headers
+
+feature -- Change Element
 
 	set_headers (a_header: HASH_TABLE [HEADER_OBJECT, STRING])
 			-- adds a header
@@ -33,8 +34,7 @@ feature
 			headers := a_header
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

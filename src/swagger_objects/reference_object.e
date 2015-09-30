@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {REFERNECE_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,10 +21,12 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	ref: STRING
 			-- the reference string
+
+feature -- Change Element
 
 	set_ref (a_ref: STRING)
 			-- sets the ref
@@ -33,8 +34,7 @@ feature
 			ref := a_ref
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

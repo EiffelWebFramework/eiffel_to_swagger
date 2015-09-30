@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -23,10 +23,12 @@ feature
 			create security_schemes.make (10)
 		end
 
-feature
+feature -- Access
 
 	security_schemes: HASH_TABLE [SECURITY_SCHEME_OBJECT, STRING]
 			-- response defionitions, mapping a name to the parameter it defines
+
+feature -- Change Element
 
 	set_security_scheme (some_schemes: HASH_TABLE [SECURITY_SCHEME_OBJECT, STRING])
 			-- adds a response
@@ -34,8 +36,7 @@ feature
 			security_schemes := some_schemes
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

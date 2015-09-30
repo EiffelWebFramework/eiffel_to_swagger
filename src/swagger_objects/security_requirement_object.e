@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			--initializes a new instance
@@ -23,14 +23,13 @@ feature
 			create values.make
 		end
 
-feature
+feature -- Access
 
 	field: STRING
 
 	values: LINKED_LIST [STRING]
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

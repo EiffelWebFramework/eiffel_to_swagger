@@ -14,17 +14,18 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make (a_value: REAL)
 		do
 			value := a_value
 		end
 
+feature -- Access
+
 	value: REAL
 
-feature {JSON_VISITOR}
-	--visit
+feature {JSON_VISITOR} -- Visitor
 
 	process (v: JSON_VISITOR)
 		do

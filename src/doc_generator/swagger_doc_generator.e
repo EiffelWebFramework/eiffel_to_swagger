@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature {NONE}
+feature {NONE} -- Implementation
 
 	parser: EIFFEL_PARSER
 			-- parses Eiffel class files
@@ -34,8 +34,7 @@ feature {NONE}
 	json_writer: JSON_WRITER
 			-- writes a json object to a *.json file
 
-feature
-	-- creation
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -46,8 +45,6 @@ feature
 			create json_writer.make
 			initialize
 		end
-
-feature {NONE}
 
 	initialize
 			--initialize the documentation generator
@@ -92,7 +89,7 @@ feature {NONE}
 			end
 		end
 
-feature
+feature -- Documentation Factory
 
 	create_documentation (path_to_folder: STRING)
 			-- creates documentation from a folder containing *.e files (also searches subfolders)

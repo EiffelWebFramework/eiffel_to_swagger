@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			--initialize new instance
@@ -23,12 +23,11 @@ feature
 			create paths.make (51)
 		end
 
-feature
+feature -- Access
 
 	paths: HASH_TABLE [PATH_ITEM_OBJECT, STRING]
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR}  -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

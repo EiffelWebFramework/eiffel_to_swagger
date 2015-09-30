@@ -14,14 +14,14 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 		do
 			initialize
 		end
 
-feature
+feature -- Access
 
 	type: STRING
 			-- type of security scheme
@@ -46,6 +46,8 @@ feature
 
 	scopes: SCOPES_OBJECT
 			-- The available scopes for the OAuth2 security scheme.
+
+feature -- Change Element
 
 	set_type (a_type: STRING)
 			-- sets the type
@@ -95,8 +97,7 @@ feature
 			scopes := a_scopes
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

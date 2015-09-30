@@ -12,6 +12,11 @@ class
 
 inherit
 
+	EIFFEL_TEST_MARKER
+		undefine
+			default_create
+		end
+
 	EQA_TEST_SET
 		redefine
 			on_prepare,

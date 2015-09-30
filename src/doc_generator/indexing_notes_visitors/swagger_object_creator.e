@@ -14,8 +14,7 @@ inherit
 create
 	make
 
-feature
-	-- object creation
+feature {NONE} -- Initialization
 
 	make
 			--initializes a new instance
@@ -26,7 +25,7 @@ feature
 			create known_schemes.make (10)
 		end
 
-feature {NONE}
+feature {NONE} -- Implementation
 
 	info_visitor: INFO_OBJECT_CREATOR
 			-- visitor for info object creation
@@ -40,14 +39,12 @@ feature {NONE}
 	known_scopes: HASH_TABLE [SCOPES_OBJECT, STRING]
 			-- scopes found, used for later reference
 
-feature
-	-- access
+feature -- Access
 
 	swagger_object: SWAGGER_OBJECT
 			-- the extracted swagger object
 
-feature {NONE}
-	-- helper functions to extract the swagger objects
+feature {NONE} -- helper functions to extract the swagger objects
 
 	extract_swagger_spec (l_as: INDEX_AS)
 			-- extracts the swagger specification
@@ -173,8 +170,7 @@ feature {NONE}
 			end
 		end
 
-feature
-	-- access
+feature	-- Access
 
 	create_swagger_object (classes: LINKED_LIST [CLASS_AS])
 			-- creates the swagger object form a list of classes, that can be further processed
@@ -193,8 +189,7 @@ feature
 			swagger_object.set_paths (paths_visitor.paths)
 		end
 
-feature {AST_EIFFEL}
-	--visitor implementation
+feature {AST_EIFFEL, EIFFEL_TEST_MARKER} -- Visitor implementation
 
 	process_class_as (l_as: CLASS_AS)
 		do

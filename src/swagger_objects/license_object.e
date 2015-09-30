@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {LICENSE_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,13 +21,15 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	name: STRING
 			--license name used for the API
 
 	url: detachable STRING
 			-- url to the license used for the API
+
+feature -- Change Element
 
 	set_name (a_name: STRING)
 		do
@@ -41,8 +42,7 @@ feature
 			url := a_url
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

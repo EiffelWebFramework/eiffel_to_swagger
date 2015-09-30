@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -24,7 +24,7 @@ feature
 			is_attribute := false
 		end
 
-feature
+feature -- Access
 
 	name: STRING
 			--replaces the nam of the element/attribute used for the described shcema property
@@ -46,6 +46,8 @@ feature
 	is_attribute_is_set: BOOLEAN
 
 	wrapped_is_set: BOOLEAN
+
+feature -- Change Element
 
 	set_name (a_name: STRING)
 			-- set the name
@@ -79,8 +81,7 @@ feature
 			wrapped_is_set := true
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {PARAMETER_OTHER_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,7 +21,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	type: STRING
 			-- type of the parameter
@@ -95,6 +94,8 @@ feature
 
 	multiple_of_is_set: BOOLEAN
 			-- flag, indicating if multiple_of was set or not
+
+feature -- Change Element
 
 	set_type (a_type: STRING)
 			-- sets the type
@@ -195,8 +196,7 @@ feature
 			multiple_of_is_set := true
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

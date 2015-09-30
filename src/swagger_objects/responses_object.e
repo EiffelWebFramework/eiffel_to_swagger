@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {RESPONSES_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -24,13 +23,15 @@ feature
 			create references.make
 		end
 
-feature
+feature -- Access
 
 	default_value: RESPONSE_OBJECT
 
 	responses: HASH_TABLE [RESPONSE_OBJECT, STRING]
 
 	references: LINKED_LIST [REFERENCE_OBJECT]
+
+feature -- Change Element
 
 	add_reference (a_reference: REFERENCE_OBJECT)
 			--adds a reference
@@ -41,8 +42,7 @@ feature
 			references.extend (a_reference)
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

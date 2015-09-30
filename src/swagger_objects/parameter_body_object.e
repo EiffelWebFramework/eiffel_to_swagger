@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {PARAMETER_BODY_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,9 +21,11 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	schema: SCHEMA_OBJECT
+
+feature -- Change Element
 
 	set_schema (a_schema: SCHEMA_OBJECT)
 			-- sets the schema
@@ -32,8 +33,7 @@ feature
 			schema := a_schema
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

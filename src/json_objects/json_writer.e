@@ -1,6 +1,5 @@
 note
 	description: "Writes a JSON object into a *.json file"
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature {NONE}
+feature {NONE} -- Implementation
 
 	json_output_file: PLAIN_TEXT_FILE
 			-- the output json file
@@ -22,8 +21,7 @@ feature {NONE}
 	indent: STRING
 			-- current indentation while file write
 
-feature {NONE}
-	-- helper features
+feature {NONE}	-- Helper features
 
 	output (text: STRING)
 			-- outputs text to the json file
@@ -50,8 +48,7 @@ feature {NONE}
 			output ("%N")
 		end
 
-feature
-	--initialization
+feature {NONE} -- Initialization
 
 	make
 		do
@@ -70,8 +67,7 @@ feature
 			indent.remove_tail (2)
 		end
 
-feature
-	--access
+feature  --Access
 
 	create_file (file_name: STRING; json: JSON_OBJECT)
 			-- creates a *.json file from a json object
@@ -81,8 +77,7 @@ feature
 			json_output_file.close
 		end
 
-feature {JSON_VALUE_OBJECT}
-	--visitor
+feature {JSON_VALUE_OBJECT}	--Visitor
 
 	process_json_array (json: JSON_ARRAY [JSON_VALUE_OBJECT])
 		do

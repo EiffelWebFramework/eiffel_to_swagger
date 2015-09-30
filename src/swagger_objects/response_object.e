@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,7 +22,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	description: STRING
 			-- short description of the response
@@ -35,6 +35,8 @@ feature
 
 	examples: EXAMPLE_OBJECT
 			-- an example of the response message
+
+feature -- Change Element
 
 	set_description (a_description: STRING)
 			-- sets the descriptin
@@ -60,8 +62,7 @@ feature
 			examples := a_examples
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

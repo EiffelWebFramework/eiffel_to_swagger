@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {EXTERNAL_DOCUMENTATION_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -22,7 +21,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	description: STRING
 			-- a short description of the target documentation
@@ -30,20 +29,25 @@ feature
 	url: STRING
 			-- th URL for the target documentation
 
+feature -- Change Element
+
 	set_url (a_url: STRING)
 			-- seths the url
 		do
 			url := a_url
+		ensure
+			url_set: url = a_url
 		end
 
 	set_description (a_description: STRING)
 			-- sets the description
 		do
 			description := a_description
+		ensure
+			description_set: description = a_description
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} 	-- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

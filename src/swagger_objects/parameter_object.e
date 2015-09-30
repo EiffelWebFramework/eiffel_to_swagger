@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {PARAMETER_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -11,7 +10,7 @@ inherit
 
 	SWAGGER_API_OBJECT
 
-feature
+feature --Access
 
 	name: STRING
 			-- the name of the parameter
@@ -24,6 +23,9 @@ feature
 
 	required: BOOLEAN
 			-- determines whether this parameter is mandatory
+
+
+feature -- Change Element
 
 	set_name (a_name: STRING)
 			-- sets the name

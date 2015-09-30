@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			-- initializes a new instance
@@ -23,10 +23,12 @@ feature
 			create scopes.make (10)
 		end
 
-feature
+feature -- Access
 
 	scopes: HASH_TABLE [STRING, STRING]
 			-- Maps between a name of a scope to a short description of it
+
+feature -- Change Element
 
 	set_scope (some_scopes: HASH_TABLE [STRING, STRING])
 			-- adds a scope
@@ -34,8 +36,7 @@ feature
 			scopes := some_scopes
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} --Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

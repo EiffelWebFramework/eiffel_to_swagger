@@ -1,8 +1,5 @@
 note
 	description: "Summary description for {TEST_CLASS}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
 	SA_SPEC: "swagger=2.0", "host=www.domain.com", "base_path=/basePath"
 	sa_spec_schemes: "http"
 	sa_consumes: "text"

@@ -7,8 +7,7 @@ note
 deferred class
 	SWAGGER_VISITOR
 
-feature {SWAGGER_API_OBJECT}
-	-- visit
+feature {SWAGGER_API_OBJECT} -- Visitor
 
 	process_contact_object (w_o: CONTACT_OBJECT)
 			-- process an object of type CONTACT_OBJECT

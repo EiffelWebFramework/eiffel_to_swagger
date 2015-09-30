@@ -14,8 +14,7 @@ feature
 		do
 		end
 
-feature {SWAGGER_VISITOR}
-	-- visit
+feature {SWAGGER_VISITOR} -- visit
 
 	process (v: SWAGGER_VISITOR)
 			-- visitor feature

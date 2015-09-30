@@ -1,6 +1,5 @@
 note
 	description: "Summary description for {INFO_OBJECT}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -14,7 +13,7 @@ inherit
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make
 			--initialize an instance of INFO_OBJECT
@@ -22,7 +21,7 @@ feature
 			initialize
 		end
 
-feature
+feature -- Access
 
 	title: STRING
 			-- title of the application
@@ -41,6 +40,8 @@ feature
 
 	version: STRING
 			-- provides the version of the application API
+
+feature -- Change Element
 
 	set_titel (a_title: STRING)
 			-- sets the title
@@ -78,8 +79,7 @@ feature
 			license := a_license
 		end
 
-feature {SWAGGER_VISITOR}
-	--visitor
+feature {SWAGGER_VISITOR} -- Visitor
 
 	process (v: SWAGGER_VISITOR)
 		do

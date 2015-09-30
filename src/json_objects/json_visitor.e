@@ -7,8 +7,7 @@ note
 deferred class
 	JSON_VISITOR
 
-feature {JSON_VALUE_OBJECT}
-	-- visitor
+feature {JSON_VALUE_OBJECT} -- visitor
 
 	process_json_array (json: JSON_ARRAY [JSON_VALUE_OBJECT])
 		deferred

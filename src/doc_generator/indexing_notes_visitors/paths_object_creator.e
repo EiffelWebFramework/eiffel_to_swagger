@@ -14,7 +14,7 @@ inherit
 create
 	make
 
-feature {NONE}
+feature {NONE} -- Implementation
 
 	class_indexes_handled: BOOLEAN
 			-- flag indicating if the class indexes were handled
@@ -49,8 +49,7 @@ feature {NONE}
 	current_schemes: LINKED_LIST [STRING]
 			-- schemes found, used for later references
 
-feature
-	-- creation
+feature {NONE} -- Initialization.
 
 	make
 			-- initializes a new instance
@@ -62,13 +61,12 @@ feature
 			create known_schemes.make (10)
 		end
 
-feature
+feature -- Access
 
 	paths: PATHS_OBJECT
 			-- the extracted paths object
 
-feature {NONE}
-	-- helper function for object extraction
+feature {NONE} -- Helper function for object extraction
 
 	extract_base_path (l_as: INDEX_AS)
 		do
@@ -149,8 +147,7 @@ feature {NONE}
 			end
 		end
 
-feature {AST_EIFFEL}
-	-- visitor implementation
+feature {AST_EIFFEL} -- Visitor implementation
 
 	process_class_as (l_as: CLASS_AS)
 		do
